@@ -143,17 +143,12 @@ function timerFinalizado() {
     zerarTimer();
 }
 
+
 function habilitarTimer() {
     if (rodando) return;
 
-    var number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+    /*var number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];*/
 
-
-    if (!number.includes(hour) || !number.includes(minute) || !number.includes(second)) {
-        rodando = true;
-        zerarTimer();
-        return;
-    }
     
     clearInterval(interval);
     rodando = true;
