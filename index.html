@@ -1,16 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Timer</title>
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
+
+  <div class="modal" onclick="fecharPopFora(event)">
+    <div class="pop_up">
+      <div id="pop_container">
+        <h2>O tempo acabou :)</h2>
+        <h4>O tempo que você colocou foi finalizado.</h4>
+        <button id="x" onclick="fecharPop()"> <img id="x_image" src="assets/img/button-x.svg"> </button>
+        <div class="pop_background"> 
+          <input class="number_end" type="text" placeholder="00 " disabled>
+          <span class="number_end">:</span>
+          <input class=" number_end" type="text" placeholder="00 "disabled>
+            <span class="number_end">:</span>
+          <input class=" number_end" type="text" placeholder="00 " disabled>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="number_container">
+      <span class="type_number">HORAS</span>
+      <input class="number" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="00 " id="number_hour" maxlength="2">
+      <span class="number">:</span>
+      <span class="type_number"">MINUTOS</span>
+      <input class=" number" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="00 " id="number_minute" maxlength="2">
+        <span class="number">:</span>
+        <span class="type_number"">SEGUNDOS</span>
+      <input class=" number" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="00 " id="number_second" maxlength="2">
+    </div>
+
+    <div class="buttons_container">
+      <button class="buttons" id="button_start" onclick="habilitarTimer()">INICIAR</button>
+      <button id="button_pause_btn" onclick="desabilitarTimer()">
+        <img id="button_pause" src="assets/img/pause-button-1x.png">
+      </button>
+
+      <button class="buttons" id="button_zero" onclick="zerarTimer()">ZERAR</button>
+    </div>
+
+    <div class="type_pag" onclick="abrirOpcoes()">
+      <h1>Temporizador </h1> <img id="type_img" src="assets/img/button-triangle.svg" />
+
+    </div>
+
+    <div class="options">
+      <ul>
+        <li><a href="https://google.com/">Cronômetro</a></li>
+        <li><a href="https://google.com/">Relógio</a></li>
+      </ul>
+    </div>
+
+    <footer>
+      <h2>
+        Created By <a href="https://github.com/harisoncleytondev">
+          <b>Harison Cleyton.</b>
+        </a>
+      </h2>
+      <img id="icon-github" src="assets/img/icon-github.png" alt="https://github.com/">
+    </footer>
+
+  </div>
+
+
+
+  </div>
+
+  <script src="main.js"></script>
+
 </body>
 
 </html>
